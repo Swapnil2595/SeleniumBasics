@@ -8,13 +8,9 @@ import org.example.TestContext;
 public class Browser extends TestContext {
 
 
-    Browser(WebDriver driver){
-        this.driver = driver;
-    }
 
-    public void OpenBrowser(String url) throws InterruptedException {
+    public static  void OpenBrowser(String url) throws InterruptedException {
         WebDriverManager.chromedriver().setup();
-       // this.driver =driver;
         driver = new ChromeDriver();
         Thread.sleep(2000);
         driver.get(url);

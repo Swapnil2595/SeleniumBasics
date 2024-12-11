@@ -6,5 +6,6 @@ import org.openqa.selenium.WebElement;
 public class TestContext {
     public static WebDriver driver;
     public static Browser browser;
+    public static WebElement element = null;
 
 }
