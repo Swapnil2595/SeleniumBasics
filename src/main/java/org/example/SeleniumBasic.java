@@ -95,6 +95,19 @@ public class SeleniumBasic extends TestContext {
         for(WebElement e:l2){
             System.out.println(e.getText());}
 
+        WebElement FileUpload = driver.findElement(By.xpath("//input[@type='file']"));
+        String path = "C:\\Users\\Rushikesh\\OneDrive\\Desktop\\Swapnil\\IMG_3622-min.jpeg";
+        // FileUpload.click();
+        Thread.sleep(3000);
+        FileUpload.sendKeys(path);
+        Thread.sleep(2000);
+
+        WebElement login = driver.findElement(By.xpath("//input[@value='Login']"));
+        Thread.sleep(2000);
+        login.click();
+
+
+
         Browser.CloseBrowser();
 
 
