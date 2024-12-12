@@ -7,6 +7,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
 
 public class mediumLevelSeleium extends TestContext{
 
@@ -48,12 +52,38 @@ public class mediumLevelSeleium extends TestContext{
 //        alert.accept();
 //        Browser.CloseBrowser();
         String parentid =driver.getWindowHandle();
-        System.out.println(parentid);
+     //   System.out.println(parentid);
 
         WebElement window = driver.findElement(By.xpath("//*[@title='New Tab']"));
         Thread.sleep(2000);
         window.click();
 
+        Set<String> WindowID = driver.getWindowHandles();
+        Iterator<String> id = WindowID.iterator();
+        String Parent = id.next();
+        String Child = id.next();
+
+        System.out.println(Parent);
+        System.out.println(Child);
+
+        List<String> windowlist = new ArrayList<>(WindowID);
+        String parent=windowlist.get(0);
+        String child = windowlist.get(1);
+
+        System.out.println(parent);
+        System.out.println(child);
+
+        Thread.sleep(2000);
+
+        driver.switchTo().window(parent);
+
+        Thread.sleep(4000);
+
+
+
+
+
+        Browser.CloseBrowser();
 
 
 
