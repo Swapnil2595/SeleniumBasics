@@ -51,6 +51,11 @@ public class SeleniumBasic extends TestContext {
         return driver.findElement(By.xpath(xpath));
     }
 
+    public static String ReturnText(String xpath){
+        return driver.findElement(By.xpath(xpath)).getText();
+    }
+
+
     public static void main(String[] args) throws InterruptedException {
 
         Browser.OpenBrowser("https://www.tutorialspoint.com/selenium/practice/selenium_automation_practice.php");

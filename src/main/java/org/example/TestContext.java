@@ -7,5 +7,5 @@ public class TestContext {
     public static WebDriver driver;
     public static Browser browser;
     public static WebElement element = null;
-
+    public static SeleniumBasic page;
 }
